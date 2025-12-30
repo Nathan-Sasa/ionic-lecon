@@ -25,3 +25,14 @@
 #container a {
   text-decoration: none;
 }
+
+ion-button {
+	--background: #3880ff;
+	--background-activated: #3171e0;
+	--background-focused: #3171e0;
+	--background-hover: #4c8dff;
+
+	color: #ffffff;
+	text-transform: none;
+	font-weight: bold;
+}

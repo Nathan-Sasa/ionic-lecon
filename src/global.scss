@@ -56,13 +56,16 @@
 	--color-clr-border: #F3F3F3;
 }
 
-ion-header {
-    --box-shadow: none;
-    --border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
 .custom-toolbar{
-    --background: transparent;
+    --background:transparent;
     --ion-color-base: transparent;
+    display: flex;
 
-    --backdrop-filter: blur(10px);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+ion-header {
+    box-shadow: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }

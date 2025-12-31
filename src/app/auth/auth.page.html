@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>auth</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+	<ion-header collapse="condense">
+		<ion-toolbar>
+			<ion-title size="large">auth</ion-title>
+		</ion-toolbar>
+	</ion-header>
+
+	<div
+		class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+		<ion-buttons>
+			<ion-button>
+				<ion-label
+					(click)="login()"
+					class="border-2 border-clr-accent p-4 px-8 text-clr-text-white rounded-2xl bg-clr-accent">
+					Login
+				</ion-label>
+			</ion-button>
+		</ion-buttons>
+	</div>
+</ion-content>

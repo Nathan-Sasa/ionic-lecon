@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonBackButton, IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonImg, IonModal, IonTitle, IonToolbar, IonList, IonItem, IonLabel, LoadingController, ModalController } from '@ionic/angular/standalone';
+import { IonBackButton, IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonImg, IonModal, IonTitle, IonToolbar, IonList, IonItem, IonLabel, LoadingController, ModalController, NavController } from '@ionic/angular/standalone';
 
 import { addIcons } from 'ionicons';
 import { create, createOutline, checkmarkCircleOutline, eye, imageOutline, expandOutline, imagesOutline, phonePortraitOutline, imageSharp, close, globeOutline, globeSharp, globe, briefcaseOutline, checkmarkDoneCircleOutline, heartCircleOutline, add } from 'ionicons/icons';
@@ -37,7 +37,8 @@ export class ProfilePage implements OnInit {
 	constructor(
 		private toastCtrl: ToastController,
 		private loadingCtrl: LoadingController,
-		private modal: ModalController
+		private modal: ModalController,
+		private navCtrl: NavController
 	) {
 		addIcons({ create, createOutline, checkmarkCircleOutline, eye, imageOutline, imagesOutline,expandOutline, phonePortraitOutline, imageSharp, close, globeOutline, globeSharp, globe, briefcaseOutline, checkmarkDoneCircleOutline, heartCircleOutline, add });
 	}
@@ -46,6 +47,11 @@ export class ProfilePage implements OnInit {
 	isLoading: boolean = false;
 
 	ngOnInit() {
+	}
+
+	back(){
+		this.navCtrl.navigateBack('/container/home');
+		// this.navCtrl.navigateRoot('/container/home');
 	}
 
 	async showToast(){

@@ -1,17 +1,209 @@
 <ion-header [translucent]="true">
-	<ion-toolbar>
+	<ion-toolbar
+		class="custom-toolbar">
+		<div class="flex items-center">
+			<ion-buttons
+				slot="start">
+				<ion-back-button defaultHref="/home"></ion-back-button>
+			</ion-buttons>
+			<ion-title>profile</ion-title>
+		</div>
+
 		<ion-buttons
-			slot="start">
-			<ion-back-button defaultHref="/home"></ion-back-button>
+			slot="end">
+			<ion-button>
+				<ion-icon 
+					name="create-outline" 
+					size="large"
+					class="text-clr-accent"
+				></ion-icon>
+			</ion-button>
 		</ion-buttons>
-		<ion-title>profile 00</ion-title>
 	</ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content 
+	[fullscreen]="true"
+	>
 	<ion-header collapse="condense">
 		<ion-toolbar>
-			<ion-title size="large">profile 00</ion-title>
+			<ion-title size="large">profile</ion-title>
 		</ion-toolbar>
 	</ion-header>
+	<div
+		class="bg-clr-accent/20">
+		<div
+			class="flex justify-start items-center px-2 div-profile items-end border-b border-clr-accent/50 py-2">
+			<div>
+				<ion-buttons>
+					<ion-button
+						id="profile-modal"
+						class="rounded-full">
+						<ion-img
+							slot="start"
+							src="assets/image/profile/profile.JPEG"
+							class="w-32 h-32 rounded-full object-cover overflow-hidden border-4 border-clr-accent "
+						></ion-img>
+					</ion-button>
+				</ion-buttons>
+			</div>
+
+			<!-- ================================ -->
+			<!-- modale -->
+			<!-- les modals pour affichier les options cachees de la photo de profile -->
+			<ion-modal
+				trigger="profile-modal"
+				[initialBreakpoint]="1" 
+				[breakpoints]="[0, 1]"
+				class="profile-modal"
+				>
+				<ng-template>
+					<div>
+						<h2 class="px-2" expand="block">Photo profile</h2>
+					</div>
+					<div>
+						<ion-list>
+							<ion-item
+								class="custom-item"
+								id="profile-image-modal">
+								<ion-icon name="eye" class="custom-icon"></ion-icon>
+								<ion-label>Voir la photo de profile</ion-label>
+							</ion-item>
+							<!-- modal enfant pour affichier la photo profile -->
+							<ion-modal
+								trigger="profile-image-modal">
+								<ng-template>
+									<ion-toolbar
+										class="profile-image-modal-toolbar">
+										<div
+											class="flex pl-4 justify-center">
+											<ion-title
+												class="modal-title-center"
+												(click)="timerEvent()"
+												>
+												Photo de profile
+											</ion-title>
+											<ion-buttons
+												slot="end">
+												<ion-button
+													(click)="closeModal()"
+												>
+													<ion-icon name="close"></ion-icon>
+												</ion-button>
+											</ion-buttons>
+										</div>
+									</ion-toolbar>
+									<ion-content
+										class="ion-page">
+										<div
+											class="h-full w-full flex items-center justify-center">
+											<ion-img 
+												src="assets/image/profile/profile.JPEG"
+												class="modal-photo-profile"
+											></ion-img>
+										</div>
+									</ion-content>
+								</ng-template>
+							</ion-modal>
+							<!-- ==== modal enfant pour affichier la photo profile === -->
+
+							<ion-item
+								class="custom-item">
+								<ion-icon name="image-outline" class="custom-icon"></ion-icon>
+								<ion-label>Ajouter un cadre décor</ion-label>
+							</ion-item>
+
+							<ion-item
+								class="custom-item">
+								<ion-icon name="images-outline" class="custom-icon"></ion-icon>
+								<ion-label>Changer la photo de profile</ion-label>
+							</ion-item>
+
+							<ion-item
+								class="custom-item">
+								<ion-icon name="image-sharp" class="custom-icon"></ion-icon>
+								<ion-label>Changer l'arrière plan</ion-label>
+							</ion-item>
+						</ion-list>
+					</div>
+				</ng-template>
+			</ion-modal>
+			<!-- fin modal pour la photo de profile -->
+			<!-- ======================= -->
+
+			<div
+				class="my-auto px-2">
+				<div
+					class=" flex items-center gap-1">
+					<span
+						class="text-2xl lg:text-3xl font-semibold">
+						Nathan Sasa 
+					</span>
+					<ion-icon 
+						name="checkmark-circle-outline" 
+						size="large"
+						class="text-clr-accent"
+					></ion-icon>
+				</div>
+				<p class="text-clr-span text-xs">jonathanbikuta05@mail.com</p>
+				<div
+					class="flex items-center justify-start gap-4 py-2 pr-2 *:text-clr-span *:not-last:border-r *:border-clr-accent/30 *:not-last:pr-2 *:font-semibold *:text-xs lg:*:text-sm *:text-center"
+					>
+					<span>
+						2342 Suivi(e)s
+					</span>
+					<span>
+						120 Abonnement
+					</span>
+					<span>
+						342 Ami(e)s
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div
+		class="items-center justify-start gap-4 py-2"
+		>
+		<ion-title
+			class="px-4">
+			À propos
+		</ion-title>
+		<div
+			class="">
+			<ion-list
+				class="custom-list">
+				<ion-item>
+					<ion-icon name="briefcase-outline" class="custom-icon" size="small"></ion-icon>
+					<ion-label class="text-xs"><strong>Dior</strong></ion-label>
+				</ion-item>
+
+				<ion-item>
+					<ion-icon name="globe-outline" class="custom-icon" size="small"></ion-icon>
+					<ion-label class="text-xs "><strong>Kinshasa</strong></ion-label>
+				</ion-item>
+
+				<ion-item>
+					<ion-icon name="heart-circle-outline" class="custom-icon" size="small"></ion-icon>
+					<ion-label class="text-xs "><strong>Célibataire</strong></ion-label>
+				</ion-item>
+
+				<ion-item>
+					<ion-icon name="add" class="custom-icon" size="small"></ion-icon>
+					<ion-label class="text-xs "><strong>Voir plus des details</strong></ion-label>
+				</ion-item>
+			</ion-list>
+		</div>
+	</div>
+
+	<div
+		class="h-24 sticky top-0 bg-clr-hover">
+
+	</div>
+
+	<div
+		class="h-screen">
+
+	</div>
 </ion-content>

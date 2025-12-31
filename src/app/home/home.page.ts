@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonButton } from '@ionic/angular/standalone';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonButtons, IonImg } from '@ionic/angular/standalone';
 
 @Component({
 	selector: 'app-home',
@@ -13,6 +13,8 @@ import { IonHeader, IonToolbar, IonTitle, IonContent, IonButton } from '@ionic/a
 		IonTitle, 
 		IonContent, 
 		IonButton,
+		IonButtons,
+		IonImg,
 		RouterModule
 	],
 })

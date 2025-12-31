@@ -32,6 +32,37 @@
  * https://ionicframework.com/docs/theming/dark-mode
  */
 
-/* @import "@ionic/angular/css/palettes/dark.always.css"; */
-/* @import "@ionic/angular/css/palettes/dark.class.css"; */
-@import '@ionic/angular/css/palettes/dark.system.css';
+// @import "@ionic/angular/css/palettes/dark.always.css";
+// @import "@ionic/angular/css/palettes/dark.class.css"; 
+// @import '@ionic/angular/css/palettes/dark.system.css';
+@import "tailwindcss";
+
+
+@theme {
+	/* denifition de couleurs ou theme du site */
+	/* found color --------------------- */
+	--color-clr-bg: #F3F4F6; 
+	--color-clr-bg-dark: #1F1F1F;
+
+	/* text color ----------------- */
+	--color-clr-text: #1F1F1F;
+	--color-clr-text-white: #F3F3F3;
+	--color-clr-span: #364153;
+	--color-clr-span-white: #99A1AF;
+
+	/* accent color ------------------------------ */
+	--color-clr-accent: #4F57C4; /* ou  615FFF */ 
+	--color-clr-hover: #615FFF; /* ou 432DD7 */
+	--color-clr-border: #F3F3F3;
+}
+
+ion-header {
+    --box-shadow: none;
+    --border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.custom-toolbar{
+    --background: transparent;
+    --ion-color-base: transparent;
+
+    --backdrop-filter: blur(10px);
+}
